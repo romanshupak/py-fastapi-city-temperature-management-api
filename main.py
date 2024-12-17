@@ -1,18 +1,12 @@
 from fastapi import FastAPI
 from sqlalchemy.orm import Session
 
+from City_CRUD_API import router as city_router
 from database import SessionLocal
 
 app = FastAPI()
 
-
-def get_db() -> Session:
-    db = SessionLocal()
-
-    try:
-        yield db
-    finally:
-        db.close()
+app.include_router(city_router.router)
 
 
 @app.get("/")
