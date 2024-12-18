@@ -16,14 +16,16 @@ class CityList(CityBase):
     id: int
 
     class Config:
-        from_attributes = True
+        # from_attributes = True
+        orm_mode = True
 
 
 class CityDelete(CityBase):
     id: int
 
     class Config:
-        from_attributes = True
+        # from_attributes = True
+        orm_mode = True
 
 
 class CityUpdate(CityBase):
@@ -32,4 +34,5 @@ class CityUpdate(CityBase):
     additional_info: Optional[str] = None
 
     class Config:
-        from_attributes = True
+        # from_attributes = True
+        orm_mode = True
